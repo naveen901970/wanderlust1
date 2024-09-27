@@ -5,7 +5,7 @@ console.log(process.env.SECRET)
 const express=require("express");
 const app=express();
 const path= require("path")
-const port=9008;
+const port=9009 ;
 const mongoose = require('mongoose');
 var methodOverride = require('method-override');
 const ejsMeta = require('ejs-mate');
@@ -31,7 +31,9 @@ const { error, clear } = require('console');
 // ------------------------------------------------------------------------------------
 //=====PATH AND CONNECTION SETUP====
 app.set("view engine","ejs");
+app.set('views', 'views');
 app.set("views",path.join(__dirname,"/views"))
+
 app.use(express.urlencoded({extended:true}));
 app.engine('ejs', ejsMeta);
 app.use(express.static(path.join(__dirname,"public")))
